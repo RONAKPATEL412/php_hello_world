@@ -1,0 +1,19 @@
+connector:
+  name: kscls
+  identifier: kscls
+  description:
+  orgIdentifier: default
+  projectIdentifier: testphpproje
+  type: K8sCluster
+  spec:
+    credential:
+      type: ManualConfig
+      spec:
+        masterUrl: https://kubernetes.docker.internal:6443
+        auth:
+          type: UsernamePassword
+          spec:
+            username: test
+            passwordRef: gitpassword
+    delegateSelectors:
+    - testdoc
