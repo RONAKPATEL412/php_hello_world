@@ -1,0 +1,37 @@
+pipeline:
+    name: testpip
+    identifier: testpip
+    projectIdentifier: testphpproje
+    orgIdentifier: default
+    tags: {}
+    properties:
+        ci:
+            codebase:
+                connectorRef: gitrepoconnector
+                build: <+input>
+    stages:
+        - stage:
+              name: buildstsg
+              identifier: buildstsg
+              type: CI
+              spec:
+                  cloneCodebase: true
+                  infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                          connectorRef: kscls
+                          namespace: default
+                          automountServiceAccountToken: true
+                          nodeSelector: {}
+                          harnessImageConnectorRef: testimage
+                  execution:
+                      steps:
+                          - step:
+                                type: BuildAndPushDockerRegistry
+                                name: testimage
+                                identifier: testimage
+                                spec:
+                                    connectorRef: testimage
+                                    repo: https://registry.hub.docker.com/
+                                    tags:
+                                        - testtgs
