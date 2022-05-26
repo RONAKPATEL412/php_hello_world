@@ -1,0 +1,14 @@
+connector:
+  name: testgitconnector
+  identifier: testgitconnector
+  description:
+  orgIdentifier: default
+  projectIdentifier: testphpproje
+  type: Git
+  spec:
+    url: https://github.com/RONAKPATEL412/php_hello_world.git
+    type: Http
+    connectionType: Repo
+    spec:
+      username: RONAKPATEL412
+      passwordRef: gitpassword
