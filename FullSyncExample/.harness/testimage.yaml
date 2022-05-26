@@ -1,0 +1,17 @@
+connector:
+  name: testimage
+  identifier: testimage
+  description:
+  orgIdentifier: default
+  projectIdentifier: testphpproje
+  type: DockerRegistry
+  spec:
+    dockerRegistryUrl: https://registry.hub.docker.com/
+    providerType: DockerHub
+    auth:
+      type: UsernamePassword
+      spec:
+        username: dipesh17
+        passwordRef: imagepsw
+    delegateSelectors:
+    - testdoc
