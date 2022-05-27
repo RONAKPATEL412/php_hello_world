@@ -16,4 +16,4 @@ connector:
             username: test
             passwordRef: gitpassword
     delegateSelectors:
-    - testdoc
+    - newtestdeleget
