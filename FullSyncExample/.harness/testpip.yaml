@@ -20,7 +20,7 @@ pipeline:
                       type: KubernetesDirect
                       spec:
                           connectorRef: kscls
-                          namespace: default
+                          namespace: harness-delegate-ng
                           automountServiceAccountToken: true
                           nodeSelector: {}
                           harnessImageConnectorRef: testimage
