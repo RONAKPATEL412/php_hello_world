@@ -28,10 +28,10 @@ pipeline:
                       steps:
                           - step:
                                 type: BuildAndPushDockerRegistry
-                                name: testimage
+                                name: ubuntu-image
                                 identifier: testimage
                                 spec:
                                     connectorRef: testimage
-                                    repo: https://registry.hub.docker.com/
+                                    repo: https://hub.docker.com/repository/docker/dipesh17/ubuntu-image
                                     tags:
-                                        - testtgs
+                                        - latest
