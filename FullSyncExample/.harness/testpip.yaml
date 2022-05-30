@@ -15,7 +15,7 @@ pipeline:
               identifier: buildstsg
               type: CI
               spec:
-                  cloneCodebase: true
+                  cloneCodebase: false
                   infrastructure:
                       type: KubernetesDirect
                       spec:
@@ -28,8 +28,8 @@ pipeline:
                       steps:
                           - step:
                                 type: BuildAndPushDockerRegistry
-                                name: ubuntu-image
-                                identifier: testimage
+                                name: default
+                                identifier: default
                                 spec:
                                     connectorRef: testimage
                                     repo: https://hub.docker.com/repository/docker/dipesh17/ubuntu-image
