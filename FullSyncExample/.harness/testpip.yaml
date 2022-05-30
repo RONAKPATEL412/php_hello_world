@@ -27,11 +27,11 @@ pipeline:
                   execution:
                       steps:
                           - step:
-                                type: BuildAndPushDockerRegistry
-                                name: default
-                                identifier: default
+                                type: Run
+                                name: testshell
+                                identifier: testshell
                                 spec:
                                     connectorRef: testimage
-                                    repo: https://hub.docker.com/repository/docker/dipesh17/ubuntu-image
-                                    tags:
-                                        - latest
+                                    image: ubantu:latest
+                                    shell: Sh
+                                    command: echo "hello"
